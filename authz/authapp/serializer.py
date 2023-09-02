@@ -6,8 +6,8 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = '__all__'
 
-class ProfileSerializer(serializers.ModelSerializer):
+class UserDataSerializer(serializers.ModelSerializer):
     user = UserSerializer(many=False, read_only=True)
     class Meta:
-        model = Profile
+        model = UserData
         fields = ('user', 'first_name', 'last_name', 'email')
